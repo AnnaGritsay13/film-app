@@ -1,0 +1,17 @@
+.movie{
+    width: 360px;
+    margin: 10px;
+    flex-direction: row;
+    background-color: transparent;
+        border: 0;
+}
+
+.poster{
+    width: 200px;
+    height: 250px;
+}
+
+.info{
+    width: 150px;
+
+}
