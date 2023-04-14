@@ -5,24 +5,27 @@ import './movie.css'
 // countries, genres
 
 
-export default function Movie({id, title, poster, rating, year}) {
+export default function Movie({id, title, poster, rating, year, genres}) {
     return (
-                    <Card className="movie">
-            <CardImg className="poster"
+      <Card key={id} className="movie">
+        <CardImg className="poster"
       alt="Унесенные призраками"
       src={poster}
         />
         
     <CardBody className="info">
       <CardTitle tag="h4">
-            {title}
+            { title.length > 30 ? `${title.slice(0, 29)}...` : title}
       </CardTitle>
       <CardText>
-            {year}, {rating}
+            {year} 
         </CardText>
-      <CardText>
-        жанры
-      </CardText>
+          <CardText>
+            {genres.join(', ')}
+          </CardText>
+          <div className="rating">
+            {rating}
+          </div>
 
           </CardBody>
           </Card>

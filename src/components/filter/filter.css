@@ -1,0 +1,8 @@
+.filter, .filter:focus{
+    color: white;
+}
+
+.filter:hover {
+    color: rgb(160, 160, 160);
+    
+}

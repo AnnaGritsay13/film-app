@@ -3,7 +3,7 @@
     margin: 10px;
     flex-direction: row;
     background-color: transparent;
-        border: 0;
+    border: 0;
 }
 
 .poster{
@@ -12,6 +12,21 @@
 }
 
 .info{
-    width: 150px;
+    background-color: rgb(144, 142, 142);
+    width: 200px;
+    height: 250px;
+    padding: 8px;
+    
+}
 
+.rating{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+.card-text{
+    margin-bottom: 5px;
 }

@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import Spinner from "./components/spiner/spinner";
 import Server from "./server/server";
 import RenderMovie from "./components/renderMovie/renderMovie";
+import Header from "./components/header/header";
 
+import './App.css'
+import Ganre from "./components/filter/ganre";
+import Years from "./components/filter/year";
 export default class App extends Component {
 
   server = new Server();
@@ -20,12 +24,20 @@ export default class App extends Component {
   
   render() {
     const { isLoadind, moviess } = this.state;
-    return <section className="container">
-      {isLoadind ? <Spinner /> : <RenderMovie
-        moviess={moviess}
-      />}
-      <div></div>
-      </section>
+    return (
+      <>
+        <Header />
+        <div className="ganre">
+          <Ganre />
+          <Years/>
+        </div>
+          {isLoadind ? <Spinner /> : <RenderMovie
+            moviess={moviess}
+          />}
+      </>
+  
+    )
+
   }
 }
 

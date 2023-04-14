@@ -1,22 +1,22 @@
 import React from "react";
 import Movie from "../movie/movie";
 
+import '../../App.css'
 
 export default function RenderMovie ({moviess}) {
     return (
-      <div>
+      <div className="conteiner">
         {moviess.map((movie) => {
-          console.log(movie);
-          return <div className="movies">
-          <Movie
+          // console.log(movie);
+          return <Movie
             key={movie.id}
             id={movie.id}
             title={movie.title}
             poster={movie.medium_cover_image}
             rating={movie.rating}
-            year={movie.year}
+              year={movie.year}
+              genres={movie.genres}
           />            
-          </div>
         })}
       </div>
     )
