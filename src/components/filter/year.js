@@ -4,19 +4,33 @@ import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from
 
 import './filter.css'
 
-export default function Years() {
-    return (
+export default function Years({ movies, onUpdateYear }) {
+  
+    const year = [...new Set(
+      movies.map(item => {
+      return item.year
+    }).sort().reverse()
+    )]
+
+  return (
             <UncontrolledDropdown inNavbar>
-              <DropdownToggle nav caret className="filter">
+        <DropdownToggle nav caret className="filter" >
                 Год
               </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>2023</DropdownItem>
-                <DropdownItem>2022</DropdownItem>
-                <DropdownItem>2021</DropdownItem>
-                <DropdownItem>2020</DropdownItem>
-                <DropdownItem>2019</DropdownItem>
+        <DropdownMenu right>
+          {
+            year.map(year => {
+              return <DropdownItem
+                key={year}
+                onClick={() => onUpdateYear(year)}
+              >
+                {year}
+              </DropdownItem>
+            })
+              }
               </DropdownMenu>
             </UncontrolledDropdown>
-    )
+    ) 
+
 }
+

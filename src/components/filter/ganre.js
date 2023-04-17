@@ -4,18 +4,26 @@ import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from
 
 import './filter.css'
 
-export default function Ganre() {
+export default function Ganre({ movies, onUpdateGenre }) {
+  const genres = [...new Set(movies.map(item => item.genres).flat().sort())]
+
+
     return (
             <UncontrolledDropdown inNavbar>
               <DropdownToggle nav caret className="filter">
                 Жанры
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>Боевик</DropdownItem>
-                <DropdownItem>Детектив</DropdownItem>
-                <DropdownItem>Драма</DropdownItem>
-                <DropdownItem>Комедия</DropdownItem>
-                <DropdownItem>Ужасы</DropdownItem>
+                    {
+            genres.map((genre, index) => {
+              return <DropdownItem
+                key={index}
+                onClick={() => onUpdateGenre(genre)}
+              >
+                {genre}
+              </DropdownItem>
+            })
+              }
               </DropdownMenu>
             </UncontrolledDropdown>
     )

@@ -3,11 +3,10 @@ import Movie from "../movie/movie";
 
 import '../../App.css'
 
-export default function RenderMovie ({moviess}) {
+export default function RenderMovies({ moviess }) {
     return (
       <div className="conteiner">
         {moviess.map((movie) => {
-          // console.log(movie);
           return <Movie
             key={movie.id}
             id={movie.id}
@@ -20,4 +19,4 @@ export default function RenderMovie ({moviess}) {
         })}
       </div>
     )
-  }
+  }  

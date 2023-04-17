@@ -18,5 +18,13 @@ body{
     margin: 0 auto;
   max-width: 1200px;
   display: flex;
+}
 
+.button-clear{
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    position: absolute;
+    right: 230px;
+    top: 70px;
 }

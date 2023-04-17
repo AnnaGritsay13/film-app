@@ -2,15 +2,17 @@ import React from "react";
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 
 import './movie.css'
+
 // countries, genres
 
 
-export default function Movie({id, title, poster, rating, year, genres}) {
+export default function Movie({ id, title, poster, rating, year, genres }) {
+
     return (
       <Card key={id} className="movie">
         <CardImg className="poster"
-      alt="Унесенные призраками"
-      src={poster}
+          alt="no poster"
+          src={poster}
         />
         
     <CardBody className="info">
