@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 
 import './movie.css'
