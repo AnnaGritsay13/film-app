@@ -1,22 +1,3 @@
-.header-content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.search{
-    background-color: white;
-    padding: 8px;
-    border: 2px solid gray;
-    outline: none;
-    border-radius: 5px;
-}
-
-.href{
-    color: white;
-    font-size: 42px;
-    text-decoration: none;
+.form-control{
+    background-color: rgb(128, 128, 128);
 }

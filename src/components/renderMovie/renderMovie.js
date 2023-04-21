@@ -1,10 +1,9 @@
 import Movie from "../movie/movie";
 
-import '../../App.css'
-
 export default function RenderMovies({ moviess }) {
     return (
-      <div className="conteiner">
+      <div className='container my-5'>
+        <div className='row row-cols-1 row-cols-md-2 row-cols-lg-4'>
         {moviess.map((movie) => {
           return <Movie
             key={movie.id}
@@ -16,6 +15,7 @@ export default function RenderMovies({ moviess }) {
               genres={movie.genres}
           />            
         })}
+          </div>
       </div>
     )
   }  

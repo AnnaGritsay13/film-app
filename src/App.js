@@ -5,8 +5,7 @@ import RenderMovie from "./components/renderMovie/renderMovie";
 import Header from "./components/header/header";
 
 import './App.css'
-import Ganre from "./components/filter/ganre";
-import Years from "./components/filter/year";
+
 export default class App extends Component {
   server = new Server();
 
@@ -63,27 +62,20 @@ export default class App extends Component {
 
     return (
       <>
-        <Header
+        <Header 
           onUpdateSearch={this.onUpdateSearch}
+          movies={moviess}
+          onUpdateGenre={this.onUpdateGenre}
+          onUpdateYear={this.onUpdateYear}
         />
-        <div className="ganre">
-          <Ganre
-            movies={moviess}
-            onUpdateGenre={this.onUpdateGenre}
-          />
-          <Years
-            movies={moviess}
-            onUpdateYear={this.onUpdateYear}
-          />
-          {boolean && <button className="button-clear" onClick={this.updateFilter}>сбросить</button>}
-        </div>
+        {/* {boolean && <button className="button-clear" onClick={this.updateFilter}>сбросить</button>} */}
+        {boolean && <button className="btn btn-secondary" type="submit" onClick={this.updateFilter}>Reset</button>}
+        
         {isLoadind ? <Spinner /> : <RenderMovie
             moviess={visiblePost}
           />}
       </>
-  
     )
-
   }
 }
 
